@@ -1,11 +1,13 @@
 /* ==== variables ==== */
 :root {
-  --pretty-color: #2196f3;
-  --body-text-color: #212121;
+  --accet-color: #2196f3;
+  --title-color: #212121;
   --white-color: #ffffff;
   --main-bg-color: #2f303a;
+  --second-bg-color: #f5f4fa;
   --text-color: #757575;
   --hover-color: #188ce8;
+  --black-color: #000000;
 }
 * {
   box-sizing: border-box;
@@ -15,8 +17,7 @@
 body {
   font-family: 'Roboto';
   font-style: normal;
-  color: var(--body-text-color);
-  background-color: #e5e5e5;
+  color: var(--title-color);
 }
 ul {
   list-style: none;
@@ -28,16 +29,10 @@ a {
 p {
   color: var(--text-color);
 }
-button {
-  font-size: 16px;
-  text-align: center;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 .container {
   width: 1170px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .title {
   font-weight: bold;
@@ -46,10 +41,15 @@ button {
   text-align: center;
   letter-spacing: 0.03em;
 }
+.button {
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 /* ============== header styles ========= */
 .header {
-  /* width: 1600px; */
-  height: 80px;
   margin: 0 auto;
   font-weight: 500;
   font-size: 14px;
@@ -65,35 +65,37 @@ button {
   font-size: 26px;
   line-height: 1.192;
   letter-spacing: 0.03em;
-  color: #000000;
+  color: var(--black-color);
 }
 .logo span {
-  color: var(--pretty-color);
+  color: var(--accet-color);
 }
 .contact-list {
   color: var(--text-color);
 }
-.nav-list a:hover,
-.nav-list a:focus,
-.contact-list a:hover,
-.contact-list a:focus {
-  color: var(--pretty-color);
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--accet-color);
 }
+.nav-link.current {
+  color: var(--accet-color);
+}
+
 /* ============== header styles ==============*/
 /* ============== main styles ================ */
 .main {
-  /* width: 1600px; */
   margin: 0 auto;
   background-color: var(--white-color);
 }
 /* hero-section */
 .hero {
-  height: 600px;
   background-color: var(--main-bg-color);
 }
-.hero h1 {
+.hero .title {
   width: 696px;
-  height: 120px;
   font-style: normal;
   font-weight: 900;
   font-size: 44px;
@@ -103,25 +105,24 @@ button {
   text-transform: uppercase;
   color: var(--white-color);
 }
-.hero button {
+.hero .button {
+  font-size: 16px;
   font-weight: bold;
   line-height: 1.875;
   letter-spacing: 0.06em;
   width: 200px;
-  height: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   color: var(--white-color);
-  background-color: var(--pretty-color);
+  background-color: var(--accet-color);
 }
-.hero button:hover,
-.hero button:focus {
+.hero .button:hover,
+.hero .button:focus {
   background-color: var(--hover-color);
 }
 /* main-section */
 /* our features section */
 .our-features h3 {
   width: 270px;
-  height: 16px;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -131,7 +132,6 @@ button {
 }
 .our-features p {
   width: 270px;
-  height: 75px;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.714;
@@ -143,8 +143,7 @@ button {
 /* what are we doing section */
 /* our team */
 .our-team {
-  background-color: #f5f4fa;
-  height: 648px;
+  background-color: var(--second-bg-color);
 }
 .our-team h3 {
   font-weight: 500;
@@ -162,7 +161,6 @@ button {
 }
 .team-card {
   width: 270px;
-  height: 368px;
   background-color: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -173,14 +171,17 @@ button {
 /* ================ main styles =============== */
 /* ================ portfolio styles =============== */
 /* filters */
-.filters button {
+.filters .button {
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.625;
   letter-spacing: 0.03em;
-  background: #f5f4fa;
+  padding: 6px 22px;
+  background: var(--second-bg-color);
 }
-.filters button:active {
-  background-color: var(--pretty-color);
+.filters button:hover,
+.filters button:focus {
+  background-color: var(--accet-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -188,7 +189,6 @@ button {
 /* projects */
 .project {
   width: 370px;
-  height: 404px;
   background: var(--white-color);
   border: 1px solid #eeeeee;
 }
@@ -208,10 +208,11 @@ button {
 /* ================ portfolio styles =============== */
 /* ================ footer styles =============== */
 .footer {
-  /* width: 1600px; */
-  height: 252px;
   margin: 0 auto;
   background-color: var(--main-bg-color);
+}
+.logo.white {
+  color: var(--white-color);
 }
 .address {
   font-style: normal;
